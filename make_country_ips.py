@@ -94,6 +94,11 @@ def make_all_country_ips(urls):
         list_file.write(country_codes[code]+'|'+code+'|'+str(len(res[code]))+'|'+str(host_num_dict.get(code, 0))+'\n')
     list_file.close()
 
+    #for code in sorted(res.keys(), key=lambda o: country_codes[o]):
+    #    url = 'http://firewall.netpatch.co/ips/'+code+'.txt'
+    #    url = 'netpatch://firewall/list?name=%s&type=%s&url=%s' % (urllib.quote(country_codes[code]), 'ip', urllib.quote(url))
+    #    print '['+code+", "+country_codes[code]+"("+str(len(res[code]))+")"+']('+url+')'
+
 
 if __name__=='__main__':
     make_all_country_ips(all_nic_urls)
